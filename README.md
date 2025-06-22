@@ -4,7 +4,7 @@ Diese Web-App ermöglicht es Schüler:innen einer Schule, ihre gefahrenen Kilome
 
 ## 🔐 Neu: WebUntis-Login
 
-Nur angemeldete Schüler:innen mit gültigem WebUntis-Account erhalten Zugriff auf das Eingabeformular.
+Nur angemeldete Schüler:innen mit gültigem WebUntis-Account erhalten Zugriff auf das Eingabeformular. Danke an Mike für das Bereitstellen.
 
 ---
 

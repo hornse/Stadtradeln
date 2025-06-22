@@ -1,0 +1,17 @@
+# PHP
+*.log
+*.tmp
+
+# SQLite-Datenbank
+db.sqlite
+
+# IntelliJ IDEA
+.idea/
+*.iml
+
+# WebUntis Konfiguration (bitte lokal halten!)
+auth/webuntis_config.php
+
+# MacOS / Windows
+.DS_Store
+Thumbs.db
