@@ -1,9 +1,9 @@
 <?php
+// auth/webuntis_config.php (Beispieldatei)
+
 return [
-  'school' => 'DEINE_SCHULE',
-  'url' => 'https://webuntis.com/WebUntis/',
-  'client_id' => 'stadtradeln-app',
-  'client_secret' => 'GEHEIM',
-  'redirect_uri' => 'https://hornse.de/stadtradeln/auth/callback.php'
+  'school' => 'frg-düsseldorf',
+  'url' => 'https://ajax.webuntis.com',
+  'client' => 'StadtradelnApp',
+  'debug' => true
 ];
-?>
