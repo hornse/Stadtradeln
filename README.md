@@ -4,7 +4,7 @@ Diese Web-App ermöglicht es Schüler:innen einer Schule, ihre gefahrenen Kilome
 
 ## 🔐 Neu: WebUntis-Login
 
-Nur angemeldete Schüler:innen mit gültigem WebUntis-Account erhalten Zugriff auf das Eingabeformular. Danke an Mike für das Bereitstellen.
+Nur angemeldete Schüler:innen mit gültigem WebUntis-Account erhalten Zugriff auf das Eingabeformular.
 
 ---
 
@@ -29,3 +29,72 @@ stadtradeln/
 ├── data.php                   # Gibt JSON-Daten für das Diagramm zurück
 ├── style.css                  # Gemeinsames Styling
 └── db.sqlite                  # SQLite-Datenbank (nach Init)
+```
+
+---
+
+## 🚀 Installation auf Uberspace
+
+1. Repository klonen oder entpacken nach `~/html/stadtradeln/`
+
+```bash
+git clone https://github.com/hornse/stadt-radeln-webapp.git ~/html/stadtradeln
+```
+
+2. Datenbank initialisieren (einmalig):
+
+```bash
+php ~/html/stadtradeln/init_db.php
+```
+
+> Danach `init_db.php` **löschen oder umbenennen**, um Missbrauch zu verhindern.
+
+3. `webuntis_config.php` anpassen:
+
+```php
+return [
+  'school' => 'DEINE_SCHULE',
+  'url' => 'https://webuntis.com/WebUntis/',
+  'client_id' => 'stadtradeln-app',
+  'client_secret' => '...',
+  'redirect_uri' => 'https://<deineDomain>/stadtradeln/auth/callback.php'
+];
+```
+
+---
+
+## 🖥️ Lokal testen
+
+```bash
+php -S localhost:8000 -t stadtradeln
+```
+
+Dann im Browser:
+- `http://localhost:8000/landing.html`
+- `http://localhost:8000/index.php` (nur mit Login)
+
+> Achtung: WebUntis-Login funktioniert nur mit öffentlicher Domain.
+
+---
+
+## ✅ Features
+
+- WebUntis-Login über OAuth 2.0
+- Nur authentifizierte Nutzer:innen können Kilometer eintragen
+- Live-Balkendiagramm mit Chart.js
+- Schön gestaltete Landing Page
+- Leichtgewichtig (kein Framework, nur PHP + JS)
+
+---
+
+## 🔒 Sicherheitshinweise
+
+- Schütze `webuntis_config.php` vor Zugriff
+- Lösche `init_db.php` nach Verwendung
+- Session-Check schützt `submit.php` und `index.php` vor unbefugtem Zugriff
+
+---
+
+## 📜 Lizenz
+
+MIT License – siehe [LICENSE](LICENSE)
