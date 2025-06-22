@@ -87,6 +87,15 @@ Dann im Browser:
 
 ---
 
+## ⚙️ Konfiguration
+
+Kopiere die Datei `auth/webuntis_config.example.php` nach `auth/webuntis_config.php` und trage dort deine echten Zugangsdaten ein:
+
+```bash
+cp auth/webuntis_config.example.php auth/webuntis_config.php
+
+---
+
 ## 🔒 Sicherheitshinweise
 
 - Schütze `webuntis_config.php` vor Zugriff
