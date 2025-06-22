@@ -1,20 +1,31 @@
-# Stadtradeln Web-App
+# 🚲 Stadtradeln Web-App (mit WebUntis-Login)
 
-Einfache Web-App zur Erfassung und Visualisierung von gefahrenen Kilometern pro Klasse.
+Diese Web-App ermöglicht es Schüler:innen einer Schule, ihre gefahrenen Kilometer während der Aktion **Stadtradeln** selbstständig online einzutragen. Die Daten werden klassenweise aggregiert und live als Balkendiagramm visualisiert.
 
-## 📂 Struktur
+## 🔐 Neu: WebUntis-Login
 
-- `index.html` – Eingabeformular + Chart.js-Diagramm
-- `submit.php` – speichert Einträge in SQLite
-- `data.php` – liefert JSON-Daten für das Diagramm
-- `init_db.php` – erzeugt einmalig die Datenbank
-- `db.sqlite` – entsteht automatisch nach dem ersten Eintrag
+Nur angemeldete Schüler:innen mit gültigem WebUntis-Account erhalten Zugriff auf das Eingabeformular.
 
-## 🚀 Installation auf Uberspace
+---
 
-1. Dateien nach `~/html/stadtradeln/` hochladen
-2. `init_db.php` im Browser aufrufen:  
-   `https://<username>.uber.space/stadtradeln/init_db.php`  
-   → danach die Datei zur Sicherheit löschen.
-3. Web-App nutzen unter:  
-   `https://<username>.uber.space/stadtradeln/index.html`
+## 🌍 Live-Demo
+
+**Landing Page:**  
+➡️ [https://hornse.de/stadtradeln/landing.html](https://hornse.de/stadtradeln/landing.html)
+
+---
+
+## 📂 Projektstruktur
+
+```plaintext
+stadtradeln/
+├── auth/                      # WebUntis-Login-Integration
+│   ├── webuntis_config.php    # Konfiguration (ausfüllen!)
+│   ├── login.php              # OAuth-Redirect zu WebUntis
+│   └── callback.php           # Rückgabe-Verarbeitung
+├── index.php                  # Authentifiziertes Eingabeformular + Diagramm
+├── landing.html               # Öffentliche Einstiegsseite
+├── submit.php                 # Speichert Einträge (geschützt)
+├── data.php                   # Gibt JSON-Daten für das Diagramm zurück
+├── style.css                  # Gemeinsames Styling
+└── db.sqlite                  # SQLite-Datenbank (nach Init)
